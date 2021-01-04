@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomePage.master.cs" Inherits="WebApplication1.HomePage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <%--bootstrap css--%>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <%--datatables css--%>
+    <link href="Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+   <%-- <link href="Content/fullcalendar.min.css" rel="stylesheet" />--%>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <%--jquery--%>
+    <script src="Scripts/jquery-3.5.1.min.js"></script>
+    <script src="Scripts/lib/jquery-ui.min.js"></script>
+    
+    <%--popper js--%>
+   <script src="Scripts/umd/popper.min.js"></script>
+    <%--bootstrap js--%>
+   <script src="Scripts/bootstrap.min.js"></script>
+   
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#ContentPlaceHolder1_txt_CheckInDate').datepicker();
+        });
+        $(document).ready(function () {
+            $('#ContentPlaceHolder1_txt_CheckOutDate').datepicker();
+        });
+
+</script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
+            <a class="navbar-brand" href="#">Holiday Inn</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Room Availability</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Rooms & Rate</a>
+                    </li>                    
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <asp:LinkButton class="nav-link" ID="LinkBtn_1" runat="server">Login</asp:LinkButton>
+                    </li>
+                    <li class="nav-item active">
+                        <asp:LinkButton class="nav-link" ID="LinkBtn_2" runat="server">Sign up</asp:LinkButton>
+                    </li>
+                    <li class="nav-item active">
+                        <asp:LinkButton class="nav-link" ID="LinkBtn_3" runat="server">Logout</asp:LinkButton>
+                    </li>
+
+                </ul>
+                
+            </div>
+        </nav>
+       </div>
+
+
+        <!-- Main Content Place Holder-->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!--Footer-->
+        <footer>
+            <p>&copy All right reversed. <a class="footerlinks" href="#" target="_blank">Simple Snippet</a></p>
+        </footer>
+    </form>
+</body>
+</html>
